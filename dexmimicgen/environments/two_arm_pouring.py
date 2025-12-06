@@ -295,7 +295,7 @@ class TwoArmPouring(TwoArmDexMGEnv):
                 name="BowlSampler",
                 mujoco_objects=self.bowl,
                 x_range=(-0.15, -0.05),
-                y_range=(-0.10, -0.15),
+                y_range=(-0.15, -0.1),
                 rotation=(0.0, 0.0),
                 rotation_axis="z",
                 ensure_object_boundary_in_range=False,
