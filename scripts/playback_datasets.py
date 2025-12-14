@@ -294,6 +294,25 @@ def reset_to(env, state):
             # v1.4 and above use the class-based edit_model_xml function
             xml = env.edit_model_xml(state["model"])
 
+        import xml.etree.ElementTree as ET
+        import json
+
+        root = ET.fromstring(xml)
+        agentview = root.find(".//camera[@name='agentview']")
+
+        task_name = env.__class__.__module__.split('.')[-1]
+        if task_name == "two_arm_can_sort":
+            task_name += "_random"
+
+        with open(os.path.join("dataset", "camera.json"), "r") as f:
+            cam_param = json.load(f)
+        
+        agentview.set("pos", " ".join(map(str, cam_param[task_name]["pos"])))
+        agentview.set("quat", " ".join(map(str, cam_param[task_name]["quat"])))
+        agentview.set("fovy", str(cam_param[task_name]["fovy"]))
+
+        xml = ET.tostring(root, encoding='unicode')
+
         env.reset_from_xml_string(xml)
         env.sim.reset()
         # hide teleop visualization after restoring from model
