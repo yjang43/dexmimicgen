@@ -392,7 +392,7 @@ def playback_dataset(args):
 
     # maybe reduce the number of demonstrations to playback
     if args.n is not None:
-        random.shuffle(demos)
+        # random.shuffle(demos)
         demos = demos[: args.n]
 
     # maybe dump video
