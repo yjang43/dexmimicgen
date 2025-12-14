@@ -1,0 +1,11 @@
+{
+    "two_arm_box_cleanup": "panda_inspire",
+    "two_arm_can_sort_random": "gr1_inspire",
+    "two_arm_coffee": "gr1_inspire",
+    "two_arm_drawer_cleanup": "panda_inspire",
+    "two_arm_lift_tray": "panda_inspire",
+    "two_arm_pouring": "gr1_inspire",
+    "two_arm_threading": "panda",
+    "two_arm_three_piece_assembly": "panda",
+    "two_arm_transport": "panda"
+}
